@@ -2,6 +2,14 @@ const stepItems = ["Dream", "Believe", "Achieve"];
 
 function App() {
   const step = 1;
+
+  function handlePrev() {
+    alert("prev");
+  }
+  function handleNext() {
+    alert("next");
+  }
+
   return (
     <div className="steps">
       <div className="numbers">
@@ -13,10 +21,18 @@ function App() {
         Step {step}: {stepItems[step - 1]}
       </p>
       <div className="buttons">
-        <button style={{ backgroundColor: "#526D82", color: "#fff" }}>
+        <button
+          style={{ backgroundColor: "#526D82", color: "#fff" }}
+          // onClick={() => alert("Prev")}
+          onClick={handlePrev}
+          // onMouseEnter={() => alert("Prev")}
+        >
           Prev
         </button>
-        <button style={{ backgroundColor: "#526D82", color: "#fff" }}>
+        <button
+          style={{ backgroundColor: "#526D82", color: "#fff" }}
+          onClick={handleNext}
+        >
           Next
         </button>
       </div>
