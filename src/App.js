@@ -7,6 +7,8 @@ function App() {
   // const arr = useState(1);
   // console.log(arr);
   const [step, setStep] = useState(1);
+  // Bad practice
+  const [test] = useState({ name: "Aim" });
 
   function handlePrev() {
     if (step > 1) setStep(step - 1);
@@ -15,6 +17,9 @@ function App() {
   function handleNext() {
     if (step < 3) setStep(step + 1);
     // setStep(step + 1);
+    // step = step + 1;
+    // Bad practice
+    test.name = "Lynn";
   }
 
   return (
@@ -26,6 +31,7 @@ function App() {
       </div>
       <p className="message">
         Step {step}: {stepItems[step - 1]}
+        {test.name}
       </p>
       <div className="buttons">
         <button
